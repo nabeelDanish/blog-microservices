@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const postRoutes = require("./routes/post");
+const eventsRoutes = require("./routes/events");
 
 // ENVS
 const port = process.env.PORT || 4000;
@@ -17,6 +18,7 @@ app.use(cors());
 
 // Adding Routers
 app.use(postRoutes);
+app.use(eventsRoutes);
 
 // Default Route
 app.get("/", (req, res, next) => {
