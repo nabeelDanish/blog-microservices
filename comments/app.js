@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const commentsRoutes = require("./routes/comments");
+const eventRoutes = require("./routes/events");
 
 // ENVS
 const port = process.env.PORT || 4001;
@@ -17,6 +18,7 @@ app.use(cors());
 
 // Adding Routers
 app.use(commentsRoutes);
+app.use(eventRoutes);
 
 // Default Route
 app.get("/", (req, res, next) => {
