@@ -1,4 +1,5 @@
 const { randomBytes } = require("crypto");
+const axios = require("axios");
 
 // Data
 const posts = {
@@ -21,6 +22,9 @@ exports.postPost = (req, res, next) => {
   const { title } = req.body;
 
   posts[id] = { id, title };
+
+  // Emitting an event
+  axios.post();
 
   res.status(201).send(posts[id]);
 };
