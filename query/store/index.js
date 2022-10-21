@@ -7,6 +7,11 @@ exports.posts = {
   "38667e1a": {
     id: "38667e1a",
     title: "Second Post",
-    comments: [],
+    comments: [
+      {
+        id: "f776d2e8",
+        content: "Nice Post Dear",
+      },
+    ],
   },
 };

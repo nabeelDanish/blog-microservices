@@ -13,10 +13,6 @@ const posts = {
   },
 };
 
-exports.getPosts = (req, res, next) => {
-  res.send(posts);
-};
-
 exports.postPost = async (req, res, next) => {
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;

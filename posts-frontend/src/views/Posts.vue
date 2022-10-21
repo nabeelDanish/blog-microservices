@@ -26,7 +26,7 @@ import { useStore } from "vuex";
 import axios from "axios";
 
 // Getting API URL
-const VITE_POSTS_URL = import.meta.env.VITE_POSTS_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 const store = useStore();
 
@@ -42,7 +42,7 @@ const posts = computed({
 
 const fetchData = () => {
   axios
-    .get(`${VITE_POSTS_URL}/posts`)
+    .get(`${VITE_API_URL}/posts`)
     .then((response) => {
       if (response.status === 200) {
         store.commit("savePostsData", response.data);
@@ -60,7 +60,7 @@ const handleFormSubmit = () => {
   title.value = null;
 
   axios
-    .post(`${VITE_POSTS_URL}/posts`, data)
+    .post(`${VITE_API_URL}/posts`, data)
     .then((response) => {
       console.log("response.status :>> ", response.status);
       if (response.status === 201) {
