@@ -10,10 +10,10 @@ exports.handleEvents = (req, res, next) => {
   }
 
   if (type === "CommentCreated") {
-    const { id, content, postId } = data;
+    const { id, content, postId, status } = data;
 
     const post = store.posts[postId];
-    post.comments.push({ id, content });
+    post.comments.push({ id, content, status });
   }
 
   res.send({});

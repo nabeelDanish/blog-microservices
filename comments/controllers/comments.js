@@ -7,6 +7,7 @@ const commentsByPostId = {
     {
       id: "f776d2e8",
       content: "Nice Post Dear",
+      status: "pending",
     },
   ],
 };
@@ -19,7 +20,7 @@ exports.postComment = async (req, res, next) => {
 
   const comments = commentsByPostId[postId] || [];
 
-  comments.push({ id: commentId, content });
+  comments.push({ id: commentId, content, status: "pending" });
   commentsByPostId[postId] = comments;
 
   // Emitting Events
@@ -29,6 +30,7 @@ exports.postComment = async (req, res, next) => {
       id: commentId,
       content,
       postId: req.params.id,
+      status: "pending",
     },
   });
 

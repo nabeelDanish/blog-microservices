@@ -11,6 +11,7 @@ exports.posts = {
       {
         id: "f776d2e8",
         content: "Nice Post Dear",
+        status: "pending",
       },
     ],
   },
