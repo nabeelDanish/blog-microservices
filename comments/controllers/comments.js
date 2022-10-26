@@ -11,10 +11,6 @@ const commentsByPostId = {
   ],
 };
 
-exports.getComments = (req, res, next) => {
-  res.send(commentsByPostId[req.params.id] || []);
-};
-
 exports.postComment = async (req, res, next) => {
   const commentId = randomBytes(4).toString("hex");
 
