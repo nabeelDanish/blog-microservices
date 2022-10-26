@@ -36,18 +36,7 @@ const comments = ref([]);
 const comment = ref(null);
 
 const fetchComments = () => {
-  axios
-    .get(`${VITE_COMMENTS_URL}/posts/${props.post.id}/comments`)
-    .then((response) => {
-      if (response.status === 200) {
-        comments.value = response.data;
-      } else {
-        console.log("Error in retrieving data");
-      }
-    })
-    .catch((e) => {
-      console.log(e);
-    });
+  comments.value = props.post.comments;
 };
 
 const handleFormSubmit = () => {
