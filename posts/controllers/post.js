@@ -2,16 +2,7 @@ const { randomBytes } = require("crypto");
 const axios = require("axios");
 
 // Data
-const posts = {
-  cb6244e2: {
-    id: "cb6244e2",
-    title: "First Post",
-  },
-  "38667e1a": {
-    id: "38667e1a",
-    title: "Second Post",
-  },
-};
+const posts = {};
 
 exports.postPost = async (req, res, next) => {
   const id = randomBytes(4).toString("hex");
