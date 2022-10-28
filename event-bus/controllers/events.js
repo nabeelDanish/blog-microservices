@@ -1,7 +1,11 @@
 const axios = require("axios");
 
+const events = [];
+
 exports.handleEvents = (req, res, next) => {
   const event = req.body;
+
+  events.push(event);
 
   console.log("\n-> Event Received: ", event.type);
 
@@ -19,4 +23,8 @@ exports.handleEvents = (req, res, next) => {
   });
 
   res.send({ status: "OK" });
+};
+
+exports.exportEvents = (req, res, next) => {
+  res.send(events);
 };
