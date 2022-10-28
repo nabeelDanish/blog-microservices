@@ -1,9 +1,6 @@
 const store = require("../store/index");
 
-exports.handleEvents = (req, res, next) => {
-  console.log("Received Event: ", req.body.type);
-  const { type, data } = req.body;
-
+exports.handleEvent = (type, data) => {
   if (type === "PostCreated") {
     const { id, title } = data;
     store.posts[id] = { id, title, comments: [] };
@@ -27,6 +24,13 @@ exports.handleEvents = (req, res, next) => {
     comment.status = status;
     comment.content = content;
   }
+};
+
+exports.handleEvents = (req, res, next) => {
+  console.log("Received Event: ", req.body.type);
+  const { type, data } = req.body;
+
+  this.handleEvent(type, data);
 
   res.send({});
 };
