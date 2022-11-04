@@ -26,6 +26,5 @@ app.get("/", (req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log("v3");
   console.log(`Listening on Port ${port}`);
 });
