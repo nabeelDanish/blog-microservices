@@ -9,10 +9,10 @@ spec:
     - host: posts.com
     - http:
         paths:
-          - path: /posts
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: query-srv
+                name: posts-frontend-srv
                 port: 
                   number: 4002
