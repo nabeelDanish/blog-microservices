@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: comments-depl
+  name: posts-frontend-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: comments
+      app: posts-frontend
   template:
     metadata:
       labels:
-        app: comments
+        app: posts-frontend
     spec:
       containers:
         - name: comments
-          image: nabeeldanishcowlar/comments
+          image: nabeeldanishcowlar/posts-frontend
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: comments-srv
+  name: posts-frontend-srv
 spec:
   selector:
-    app: comments
+    app: posts-frontend
   type: ClusterIP
   ports:
-  - name: comments
+  - name: posts-frontend
     protocol: TCP
-    port: 4001
-    targetPort: 4001
+    port: 5100
+    targetPort: 5100

@@ -13,6 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: posts-srv
+                name: query-srv
                 port: 
-                  number: 4000
+                  number: 4002
