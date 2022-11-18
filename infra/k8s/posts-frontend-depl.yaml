@@ -13,7 +13,7 @@ spec:
         app: posts-frontend
     spec:
       containers:
-        - name: comments
+        - name: posts-frontend
           image: nabeeldanishcowlar/posts-frontend
 ---
 apiVersion: v1
