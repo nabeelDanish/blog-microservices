@@ -61,7 +61,7 @@ const handleFormSubmit = () => {
   title.value = null;
 
   axios
-    .post(`${VITE_POSTS_URL}/posts`, data)
+    .post(`${VITE_POSTS_URL}/posts/create`, data)
     .then((response) => {
       console.log("response.status :>> ", response.status);
       if (response.status === 201) {
